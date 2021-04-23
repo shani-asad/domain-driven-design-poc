@@ -8,16 +8,6 @@
     <title>Document</title>
 </head>
 <body class=" bg-gray-200">
-{{--<nav class=" p-6 bg-white flex justify-between mb-6">--}}
-{{--    <ul class="flex items-center">--}}
-{{--        <li>--}}
-{{--            <a href="{{ route('clinics') }}" class="p-3">View Clinicz2</a>--}}
-{{--        </li>--}}
-{{--        <li>--}}
-{{--            <a href="{{ route('registerClinic') }}" class="p-3">Register Clinicz2</a>--}}
-{{--        </li>--}}
-{{--    </ul>--}}
-{{--</nav>--}}
 @yield('content')
 </body>
 </html>
