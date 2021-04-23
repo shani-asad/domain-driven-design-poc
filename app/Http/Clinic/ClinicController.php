@@ -9,8 +9,8 @@ class ClinicController extends Controller
 {
     public function  index() {
         $clinicRepository = new ClinicRepository();
-        $select = $clinicRepository->getAll();
+        $select = $clinicRepository->getClinicsAndServices();
 
-        return view('clinics.index')->with('name', $select);
+        return view('clinics.index')->with('data', $select);
     }
 }

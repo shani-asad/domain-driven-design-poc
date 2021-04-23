@@ -38,7 +38,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
 
-//        $this->loadRoutesFrom(__DIR__.'/../Http/Clinic/ClinicRoute.php');
+//        $this->loadRoutesFrom(__DIR__.'/../Http/Clinicz2/ClinicRoute.php');
 
         $this->routes(function () {
             Route::prefix('api')

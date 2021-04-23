@@ -1,5 +1,6 @@
 <?php
 
+//namespace App\Models;
 namespace App\Http\Clinic;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;

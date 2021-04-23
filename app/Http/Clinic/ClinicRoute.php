@@ -9,6 +9,3 @@ Route::get('/', function () {
 });
 
 Route::get('/clinics', [ClinicController::class, 'index'])->name('clinics');
-
-Route::get('/registerClinics', [RegisterClinicController::class, 'index'])->name('registerClinic');
-Route::post('/registerClinics', [RegisterClinicController::class, 'store']);

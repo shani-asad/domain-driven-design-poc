@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClinicsTable extends Migration
+class CreateClinicServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateClinicsTable extends Migration
      */
     public function up()
     {
-        Schema::create('clinics', function (Blueprint $table) {
+        Schema::create('clinic_services', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('clinic_id')
+                ->constrained()
+                ->onDelete('cascade');
             $table->string('name');
-            $table->string('address');
-            $table->string('phone');
-            $table->string('srcUrl');
+            $table->unique(['clinic_id', 'name']);
         });
     }
 
@@ -30,6 +31,6 @@ class CreateClinicsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clinics');
+        Schema::dropIfExists('clinic_services');
     }
 }

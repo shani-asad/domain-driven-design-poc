@@ -2,17 +2,20 @@
 
 namespace App\Http\Clinic;
 
-Class ClinicRepository{
-    public function getAll(){
-        return Clinic::all();
-    }
+use Illuminate\Support\Facades\DB;
 
-    public function store($request){
-        Clinic::create([
-            'name' => $request->name,
-            'address' => $request->address,
-            'phone' => $request->phone,
-            'srcUrl' => $request->srcUrl,
-        ]);
+Class ClinicRepository{
+
+    public function getClinicsAndServices() {
+        $data = DB::table('clinics')
+            ->join('clinic_services', 'clinics.id', '=', 'clinic_services.clinic_id')
+            ->select('clinics.name', 'clinics.phone', 'clinics.address', 'clinic_services.name as service_name')
+            ->get();
+
+        for($i = 1; $i < count($data); $i++){
+
+        }
+
+        return $data;
     }
 }
